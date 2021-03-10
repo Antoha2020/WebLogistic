@@ -8,27 +8,71 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebLogistic</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <div id="topPanel">
+        <nav class="navbar sticky-top  flex-md-nowrap p-0" style="background-color:#3d50b6; height:70px;">
+            <a class="navbar-brand " style="margin-top:5px; margin-bottom:5px; margin-left:0px; padding-right:0px; padding-left:0px; padding-top:0px" href="#">
+                <img name="img" id="img" style="margin-bottom:0px; margin-top:0px;" src="~/img/logo_white.png" alt="" width="106" height="50">
+            </a>
+
+            
+            <script type="text/javascript">
+                //document.getElementById("aDisp").href = "/Dispatcher/MapElectricity?login=" + localStorage.getItem("loginLast");
+                //document.getElementById("aRep").href = "/Data/Index?login=" + localStorage.getItem("loginLast");
+                setInterval(function () {
+                    //alert("time");
+                    //let days = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
+                    var date = new Date();
+                    n = days[date.getDay()],
+                        y = date.getFullYear(),
+                        mon = date.getMonth() + 1,
+                        d = date.getDate(),
+                        h = date.getHours(),
+                        m = date.getMinutes(),
+                        s = date.getSeconds(),
+                        h = (h < 10) ? '0' + h : h,
+                        m = (m < 10) ? '0' + m : m,
+                        s = (s < 10) ? '0' + s : s,
+                        d = (d < 10) ? '0' + d : d,
+                        mon = (mon < 10) ? '0' + mon : mon,
+                        document.getElementById('time').innerHTML = h + ':' + m + ':' + s,
+                        document.getElementById('date').innerHTML = n + " " + d + '.' + mon + '.' + y;
+                    // document.getElementById('date').innerHTML = date;
+                }, 1000);
+            </script>
+
+            
+            <ul class="navbar-nav px-3" style="margin-right:0px;">
+                <li class="nav-item text-nowrap">
+                    <span style="color:#FFFFFF; ">
+                        <span id="time" style="margin-left:22px; font-size:14pt;"></span></br>
+                        <span id="date" style="margin-right:0px; font-size:11pt;"></span>
+                    </span>
+                </li>
+            </ul>
+            <ul class="navbar-nav px-3" style="margin-right:0px;">
+                <li class="nav-item text-nowrap">
+                    <div style="border: 1px solid #fff; height: 50px;width:1px; ">
+                    </div>
+                </li>
+            </ul>
+            
+            <ul class="navbar-nav px-3" style="margin-right:0px;">
+                <li class="nav-item text-nowrap">
+                    <div style="border: 1px solid #fff; height: 50px;width:1px; ">
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav px-3">
+                <li class="nav-item text-nowrap tooltip1">
+                    <span class="tooltiptext1" style="width: 70px;">Выход</span>
+                    <a class="nav-link" href="~/signin/autorization">
+                        <!--<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>-->
+                        <svg data-name="Layer 1" id="Layer_1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path class="cls-1" d="M16.49,21.49l1.21,1.21L24.41,16,17.71,9.29l-1.21,1.21,3.09,3.17A6,6,0,0,0,21.47,15l.06,0H1v2H21.53l-.1,0a6,6,0,0,0-1.84,1.28Z" /><polygon class="cls-1" points="9 3 9 9 11 9 11 5 27 5 27 27 11 27 11 23 9 23 9 29 29 29 29 3 9 3" /></svg>
+                    </a>
+                </li>
+            </ul>
         </nav>
-    </header>
+    </div>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
