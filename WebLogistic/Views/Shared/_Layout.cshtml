@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebLogistic</title>
+    <title>WebLogistic</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
     <div id="topPanel">
-        <nav class="navbar sticky-top  flex-md-nowrap p-0" style="background-color:#3d50b6; height:70px;">
-            <a class="navbar-brand " style="margin-top:5px; margin-bottom:5px; margin-left:0px; padding-right:0px; padding-left:0px; padding-top:0px" href="#">
-                <img name="img" id="img" style="margin-bottom:0px; margin-top:0px;" src="~/img/logo_white.png" alt="" width="106" height="50">
+        <nav class="navbar sticky-top  flex-md-nowrap p-0" style="background-color:#32CD32; height:70px;">
+            <a class="navbar-brand " style="margin-top:5px; margin-bottom:5px; margin-left:10px; padding-right:0px; padding-left:0px; padding-top:0px" href="#">
+                <img name="img" id="img" style="margin-bottom:0px; margin-top:0px;" src="~/img/logo1.png" alt="" width="60" height="60">
             </a>
 
             
@@ -20,7 +20,7 @@
                 //document.getElementById("aRep").href = "/Data/Index?login=" + localStorage.getItem("loginLast");
                 setInterval(function () {
                     //alert("time");
-                    //let days = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
+                    let days = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
                     var date = new Date();
                     n = days[date.getDay()],
                         y = date.getFullYear(),
